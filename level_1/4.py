@@ -1,11 +1,13 @@
-import datetime
+from datetime import date, datetime
 
-from constants import ___
-
-
-def calculate_age(date_of_birth: ___) -> ___:
-    pass
+def calculate_age(date_of_birth: date) -> int:
+    age = datetime.now().year - date_of_birth.year - (
+            (datetime.now().month, datetime.now().day) < (date_of_birth.month, date_of_birth.day)
+    )
+    return age
 
 
 if __name__ == "__main__":
-    assert calculate_age(date_of_birth=datetime.date(1965, 6, 2)) == 57
+    assert calculate_age(date_of_birth=date(1965, 6, 2)) == 60
+
+    # UPD: Ошибку увидели и тест исправили. Было захардкожено на 2022 год как будто сейчас
