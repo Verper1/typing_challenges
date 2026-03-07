@@ -1,8 +1,5 @@
-from constants import ___
-
-
-def stringify(value: ___) -> ___:
-    pass
+def stringify(value: any) -> str:
+    return str(value)
 
 
 if __name__ == "__main__":
