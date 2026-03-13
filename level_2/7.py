@@ -1,8 +1,7 @@
-from constants import ___
-
-
-def calculate_total_spent_for_user(user: ___) -> ___:
-    pass
+"""Нужно сделать логику функции calculate_total_spent_for_user и аннотации в ней так, чтобы прошёл тест."""
+def calculate_total_spent_for_user(user: tuple[str, int, list]) -> int:
+    """Нахождение суммы потраченного пользователем за все покупки."""
+    return sum(user[2])
 
 
 if __name__ == "__main__":

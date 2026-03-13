@@ -1,8 +1,10 @@
-from constants import ___
-
-
-def is_point_in_square(point: ___, left_upper_corner: ___, right_bottom_corner: ___) -> ___:
-    pass
+"""Нужно сделать логику функции is_point_in_square и аннотации в ней так, чтобы прошёл тест."""
+def is_point_in_square(point: tuple[int, int],
+                       left_upper_corner: tuple[int, int],
+                       right_bottom_corner: tuple[int, int]) -> bool:
+    """Находит вхождение точки в квадрат по двум координатам углов квадрата."""
+    return (left_upper_corner[0] < point[0] < right_bottom_corner[0] and
+            left_upper_corner[1] < point[1] < right_bottom_corner[1])
 
 
 if __name__ == "__main__":
