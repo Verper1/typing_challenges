@@ -1,0 +1,1 @@
+"""Заглушка для D104 Missing docstring in public package."""
