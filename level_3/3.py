@@ -1,12 +1,25 @@
-from constants import ___
+import dataclasses
+from random import randint
+from typing import Callable
+from loguru import logger
 
 
-def create_user(user_name: ___, user_age: ___, after_created: ___) -> ___:
-    pass
+@dataclasses.dataclass(frozen=True, kw_only=True, slots=True)
+class User:
+    user_id = randint(1, 1000)
+    user_name: str
+    user_age: int
+
+
+def create_user(user_name: str, user_age: int, after_created: Callable[[int], None]) -> None:
+    created_user = User(user_name=user_name, user_age=user_age)
+    logger.info(f'Пользователь {created_user} был создан.')
+    after_created(created_user.user_id)
 
 
 def send_test_email(user_id: int) -> None:
-    pass
+    # Мощная логика отправления письма для подтверждения входа.
+    logger.info(f"Письмо отправлено пользователю с id: {user_id}.")
 
 
 if __name__ == "__main__":

@@ -1,9 +1,5 @@
-from constants import ___
-
-
-def calculate_total_spent_for_user(user: ___) -> ___:
-    # попробуй тут воспользовать typing.TypedDict
-    pass
+def calculate_total_spent_for_user(user: dict[str, str | int | list[int]]) -> int:
+    return sum(user['transactions_sums'])
 
 
 if __name__ == "__main__":
