@@ -1,0 +1,29 @@
+[flake8]
+# Максимальная длина строки
+max-line-length = 120
+
+# Исключаем виртуальное окружение, кеши, node_modules
+exclude = .venv,.env,venv,env,node_modules,__pycache__
+
+# Ограничения по сложности кода
+max-complexity = 8
+max-annotations-complexity = 4
+
+# Игнорируем правила, которые конфликтуют с твоими плагинами
+ignore = W503,PYI001
+
+# Разрешаем assert только в этих путях
+assert_allowed_in_paths = tests,migrations
+
+# Файлы, для которых ослабляем правила
+per-file-ignores =
+    __init__.py: F401, ABS101
+    */tests/*: TAE001, FNE006, CFQ002
+    **/conftest.py: TAE001, FNE008, FNE006
+    custom_types.py: CCE001
+
+# Запрет относительных импортов
+ban-relative-imports = true
+
+# Минимальное покрытие тестами
+min-coverage-percents = 70
